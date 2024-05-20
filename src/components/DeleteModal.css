@@ -1,0 +1,23 @@
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirm-btn, .cancel-btn {
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: monospace;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    max-width: 100px;
+}
+
+.confirm-btn {
+    background-color: #d9534f;
+}
+
+.cancel-btn {
+    background-color: #777;
+}
