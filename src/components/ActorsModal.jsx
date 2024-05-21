@@ -4,9 +4,14 @@ import "./Modal.css";
 import "./AddButton.css";
 import ActorsTable from "./ActorsTable";
 import SelectActors from "./SelectActors";
-import { getMovieActors, getActors, addActorToMovie } from "../data/movies";
+import {
+  getMovieActors,
+  getActors,
+  addActorToMovie,
+  removeActorFromMovie,
+} from "../data/movies";
 
-function ActorsModal({ closeActorsModal, movieToEditId }) {
+function ActorsModal({ closeActorsModal, movieToEditId, movie }) {
   const [movieActors, setMovieActors] = useState([
     { id: 0, firstName: "Pepe", lastName: "Ramos", birthdate: "1970-12-01" },
   ]);
@@ -30,6 +35,17 @@ function ActorsModal({ closeActorsModal, movieToEditId }) {
 
   const handleActorToAddId = (id) => {
     setActorToAddId(id);
+  };
+
+  const removeActor = (actorId) => {
+    const filteredActors = movieActors.filter(function (actor) {
+      return actor.id !== actorId;
+    });
+    setMovieActors(filteredActors);
+  };
+
+  const handleRemoveActor = (actorId) => {
+    removeActorFromMovie(movieToEditId, actorId, removeActor);
   };
 
   const isActorInMovie = (actorId, movieActors) => {
@@ -63,9 +79,13 @@ function ActorsModal({ closeActorsModal, movieToEditId }) {
             x
           </button>
         </div>
+        <h3>{movie.title}</h3>
         <SelectActors actors={actors} handleActorToAddId={handleActorToAddId} />
         <button onClick={() => addActor(actorToAddId)}>Add actor</button>
-        <ActorsTable actors={movieActors} />
+        <ActorsTable
+          actors={movieActors}
+          handleRemoveActor={handleRemoveActor}
+        />
       </div>
     </div>
   );

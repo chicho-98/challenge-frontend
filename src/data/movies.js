@@ -89,3 +89,16 @@ export function addActorToMovie(
     .then(() => handleAddActorToMovie(actor))
     .catch((error) => console.log(error));
 }
+
+export function removeActorFromMovie(movieId, actorId, removeActor) {
+  fetch(`http://localhost:8080/api/movies/${movieId}/actors/${actorId}`, {
+    method: "DELETE",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then(() => removeActor(actorId))
+    .catch((error) => console.log(error));
+}

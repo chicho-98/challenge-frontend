@@ -117,6 +117,7 @@ function Movies() {
         <ActorsModal
           closeActorsModal={closeActorsModal}
           movieToEditId={movieToEditId}
+          movie={movies.find((movie) => movie.id === movieToEditId)}
         />
       )}
     </>

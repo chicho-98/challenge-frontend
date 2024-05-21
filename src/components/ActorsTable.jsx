@@ -1,7 +1,8 @@
 import "./ActorsTable.css";
 import "./MoviesTable.css";
+import "./DeleteModal.css";
 
-function ActorsTable({ actors }) {
+function ActorsTable({ actors, handleRemoveActor }) {
   return (
     <div className="container">
       <table>
@@ -21,7 +22,16 @@ function ActorsTable({ actors }) {
                 <td>{actor.firstName}</td>
                 <td>{actor.lastName}</td>
                 <td>{actor.birthdate}</td>
-                <td className="actions"></td>
+                <td className="actions">
+                  <span>
+                    <button
+                      onClick={() => handleRemoveActor(actor.id)}
+                      className="confirm-btn"
+                    >
+                      remove
+                    </button>
+                  </span>
+                </td>
               </tr>
             );
           })}
