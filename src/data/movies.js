@@ -57,3 +57,35 @@ export function deleteMovie(movieId) {
     },
   }).catch((error) => console.log(error));
 }
+
+export function getMovieActors(id, updateMovieActors) {
+  fetch(`http://localhost:8080/api/movies/${id}`)
+    .then((response) => response.json())
+    .then((movie) => updateMovieActors(movie.actors))
+    .catch((error) => console.log(error));
+}
+
+export function getActors(updateActors) {
+  fetch("http://localhost:8080/api/actors")
+    .then((response) => response.json())
+    .then((actors) => updateActors(actors))
+    .catch((error) => console.log(error));
+}
+
+export function addActorToMovie(
+  movieId,
+  actorId,
+  handleAddActorToMovie,
+  actor
+) {
+  fetch(`http://localhost:8080/api/movies/${movieId}/actors/${actorId}`, {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then(() => handleAddActorToMovie(actor))
+    .catch((error) => console.log(error));
+}

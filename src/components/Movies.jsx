@@ -4,12 +4,14 @@ import Header from "./Header";
 import MoviesTable from "./MoviesTable";
 import Modal from "./Modal";
 import DeleteModal from "./DeleteModal";
+import ActorsModal from "./ActorsModal";
 import AddButton from "./AddButton";
 import { getMovies, createMovie, editMovie } from "../data/movies";
 
 function Movies() {
   const [modalOpen, setModalOpen] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [actorsModalOpen, setActorsModalOpen] = useState(false);
   const [movieToEditId, setMovieToEditId] = useState(null);
   const [movies, setMovies] = useState([{ id: 0, title: "Movie title" }]);
 
@@ -49,6 +51,11 @@ function Movies() {
     openDeleteModal();
   };
 
+  const handleMovieToAddActorsId = (id) => {
+    setMovieToEditId(id);
+    openActorsModal();
+  };
+
   const openModal = () => {
     setModalOpen(true);
   };
@@ -67,6 +74,15 @@ function Movies() {
     setMovieToEditId(null);
   };
 
+  const openActorsModal = () => {
+    setActorsModalOpen(true);
+  };
+
+  const closeActorsModal = () => {
+    setActorsModalOpen(false);
+    setMovieToEditId(null);
+  };
+
   return (
     <>
       <Header />
@@ -78,6 +94,7 @@ function Movies() {
         movies={movies}
         handleMovieToDeleteId={handleMovieToDeleteId}
         handleMovieToEditId={handleMovieToEditId}
+        handleMovieToAddActorsId={handleMovieToAddActorsId}
       />
       {modalOpen && (
         <Modal
@@ -94,6 +111,12 @@ function Movies() {
           closeDeleteModal={closeDeleteModal}
           movieToEditId={movieToEditId}
           removeMovie={removeMovie}
+        />
+      )}
+      {actorsModalOpen && (
+        <ActorsModal
+          closeActorsModal={closeActorsModal}
+          movieToEditId={movieToEditId}
         />
       )}
     </>

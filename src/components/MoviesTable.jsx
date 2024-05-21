@@ -1,7 +1,13 @@
 import "./MoviesTable.css";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
+import { IoIosPerson } from "react-icons/io";
 
-function MoviesTable({ movies, handleMovieToDeleteId, handleMovieToEditId }) {
+function MoviesTable({
+  movies,
+  handleMovieToDeleteId,
+  handleMovieToEditId,
+  handleMovieToAddActorsId,
+}) {
   return (
     <div className="container">
       <table>
@@ -27,6 +33,11 @@ function MoviesTable({ movies, handleMovieToDeleteId, handleMovieToEditId }) {
                   <span>
                     <BsFillPencilFill
                       onClick={() => handleMovieToEditId(movie.id)}
+                    />
+                  </span>
+                  <span>
+                    <IoIosPerson
+                      onClick={() => handleMovieToAddActorsId(movie.id)}
                     />
                   </span>
                 </td>

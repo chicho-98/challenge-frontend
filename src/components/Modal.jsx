@@ -1,6 +1,5 @@
 import "./Modal.css";
 import { useState } from "react";
-import { createMovie } from "../data/movies";
 
 function Modal({ closeModal, handleSubmit, defaultValues }) {
   const [formState, setFormState] = useState(defaultValues || { title: "" });
