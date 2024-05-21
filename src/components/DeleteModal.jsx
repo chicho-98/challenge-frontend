@@ -3,9 +3,8 @@ import "./Modal.css";
 import { deleteMovie } from "../data/movies";
 
 function DeleteModal({ closeDeleteModal, movieToEditId, removeMovie }) {
-  const handleDeleteMovie = (movieToEditId) => {
-    deleteMovie(movieToEditId);
-    removeMovie(movieToEditId);
+  const handleDeleteMovie = (movieToEditId, removeMovie) => {
+    deleteMovie(movieToEditId, removeMovie);
     closeDeleteModal();
   };
 
@@ -16,7 +15,7 @@ function DeleteModal({ closeDeleteModal, movieToEditId, removeMovie }) {
         <div className="btn-container">
           <button
             className="confirm-btn"
-            onClick={() => handleDeleteMovie(movieToEditId)}
+            onClick={() => handleDeleteMovie(movieToEditId, removeMovie)}
           >
             delete
           </button>

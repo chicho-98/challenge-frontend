@@ -48,14 +48,17 @@ export function editMovie(id, movie) {
     .catch((error) => console.log(error));
 }
 
-export function deleteMovie(movieId) {
+export function deleteMovie(movieId, removeMovie) {
   fetch(`http://localhost:8080/api/movies/${movieId}`, {
     method: "DELETE",
     mode: "cors",
     headers: {
       "Content-Type": "application/json",
     },
-  }).catch((error) => console.log(error));
+  })
+    .then((response) => response.json)
+    .then(() => removeMovie(movieId))
+    .catch((error) => console.log(error));
 }
 
 export function getMovieActors(id, updateMovieActors) {
