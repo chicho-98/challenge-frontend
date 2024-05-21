@@ -86,7 +86,7 @@ function Movies() {
   return (
     <>
       <Header />
-      <h1>Hello challenge</h1>
+      <h2>Movies</h2>
       <div className="button-container">
         <AddButton text="+ Movie" openModal={openModal} />
       </div>
