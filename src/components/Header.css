@@ -11,3 +11,13 @@ nav {
     display: flex;
     justify-content: space-around;
 }
+
+.link {
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+}
+
+.link:hover {
+    color: #F0E68C;
+}

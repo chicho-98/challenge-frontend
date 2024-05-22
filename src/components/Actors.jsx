@@ -51,8 +51,12 @@ function Actors() {
           <h2>Actors</h2>
           <AddButton text="+ Actor" openModal={openModal} />
         </div>
+        <ActorsTable
+          actors={actors}
+          handleRemoveActor={handleRemoveActor}
+          deleteText={"delete"}
+        />
       </div>
-      <ActorsTable actors={actors} handleRemoveActor={handleRemoveActor} />
       {modalOpen && (
         <AddActorModal closeModal={closeModal} handleSubmit={handleAddActor} />
       )}

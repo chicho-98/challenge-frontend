@@ -1,3 +1,7 @@
+.msg {
+    text-align: center;
+}
+
 .btn-container {
     display: flex;
     justify-content: space-around;

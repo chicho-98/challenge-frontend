@@ -11,7 +11,7 @@ function DeleteModal({ closeDeleteModal, movieToEditId, removeMovie }) {
   return (
     <div className="modal-container">
       <div className="modal">
-        <h3>¿Está seguro que desea eliminar la película?</h3>
+        <h3 className="msg">¿Está seguro que desea eliminar la película?</h3>
         <div className="btn-container">
           <button
             className="delete-btn"

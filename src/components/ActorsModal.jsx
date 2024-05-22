@@ -87,6 +87,7 @@ function ActorsModal({ closeActorsModal, movieToEditId, movie }) {
         <ActorsTable
           actors={movieActors}
           handleRemoveActor={handleRemoveActor}
+          deleteText={"remove"}
         />
       </div>
     </div>

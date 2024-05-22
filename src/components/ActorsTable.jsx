@@ -2,7 +2,7 @@ import "./ActorsTable.css";
 import "./MoviesTable.css";
 import "./DeleteModal.css";
 
-function ActorsTable({ actors, handleRemoveActor }) {
+function ActorsTable({ actors, handleRemoveActor, deleteText }) {
   return (
     <div className="table-container">
       <table className="table">
@@ -29,7 +29,7 @@ function ActorsTable({ actors, handleRemoveActor }) {
                       className="remove-btn"
                       onClick={() => handleRemoveActor(actor.id)}
                     >
-                      remove
+                      {deleteText}
                     </button>
                   </span>
                 </td>
