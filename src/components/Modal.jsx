@@ -2,7 +2,9 @@ import "./Modal.css";
 import { useState } from "react";
 
 function Modal({ closeModal, handleSubmit, defaultValues }) {
-  const [formState, setFormState] = useState(defaultValues || { title: "" });
+  const [formState, setFormState] = useState(
+    defaultValues || { title: "", runtimeMinutes: 0 }
+  );
 
   const handleChange = (e) => {
     setFormState({
@@ -12,7 +14,7 @@ function Modal({ closeModal, handleSubmit, defaultValues }) {
   };
 
   const formIsValid = () => {
-    if (formState.title) {
+    if (formState.title && formState.runtimeMinutes) {
       return true;
     }
     return false;
@@ -40,6 +42,15 @@ function Modal({ closeModal, handleSubmit, defaultValues }) {
               placeholder="Title"
               value={formState.title}
               onChange={handleChange}
+              required
+            />
+            <input
+              type="number"
+              name="runtimeMinutes"
+              placeholder="Runtime (minutes)"
+              value={formState.runtimeMinutes}
+              onChange={handleChange}
+              min="1"
               required
             />
           </div>

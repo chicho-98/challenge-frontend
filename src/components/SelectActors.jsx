@@ -13,7 +13,7 @@ function SelectActors({ actors, handleActorToAddId }) {
         {actors.map(function (actor) {
           return (
             <option key={actor.id} value={actor.id}>
-              {actor.firstName + actor.lastName}
+              {actor.firstName + " " + actor.lastName}
             </option>
           );
         })}
