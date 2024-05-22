@@ -75,13 +75,15 @@ function ActorsModal({ closeActorsModal, movieToEditId, movie }) {
     <div className="modal-container">
       <div className="modal">
         <div className="cancel-btn-container">
-          <button className="cancel-btn" onClick={closeActorsModal}>
+          <button className="cancel" onClick={closeActorsModal}>
             x
           </button>
         </div>
         <h3>{movie.title}</h3>
         <SelectActors actors={actors} handleActorToAddId={handleActorToAddId} />
-        <button onClick={() => addActor(actorToAddId)}>Add actor</button>
+        <button className="submit-btn" onClick={() => addActor(actorToAddId)}>
+          Add actor
+        </button>
         <ActorsTable
           actors={movieActors}
           handleRemoveActor={handleRemoveActor}

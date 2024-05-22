@@ -28,7 +28,7 @@ function Modal({ closeModal, handleSubmit, defaultValues }) {
     <div className="modal-container">
       <div className="modal">
         <div className="cancel-btn-container">
-          <button className="cancel-btn" onClick={closeModal}>
+          <button className="cancel" onClick={closeModal}>
             x
           </button>
         </div>
@@ -43,7 +43,7 @@ function Modal({ closeModal, handleSubmit, defaultValues }) {
               required
             />
           </div>
-          <div className="submit-btn-container">
+          <div>
             <button className="submit-btn" onClick={handleSubmitButton}>
               submit
             </button>

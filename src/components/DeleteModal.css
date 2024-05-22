@@ -3,19 +3,30 @@
     justify-content: space-around;
 }
 
-.confirm-btn, .cancel-btn {
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 18px;
+.remove-btn {
+    font-size: 16px;
     font-family: monospace;
+    border: none;
     color: white;
     text-align: center;
     cursor: pointer;
     max-width: 100px;
+    background-color: #e74c3c;
 }
 
-.confirm-btn {
-    background-color: #d9534f;
+.delete-btn, .cancel-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
 }
 
 .cancel-btn {

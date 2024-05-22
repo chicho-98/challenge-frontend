@@ -1,4 +1,5 @@
 import "./SelectActors.css";
+import "./Modal.css";
 
 function SelectActors({ actors, handleActorToAddId }) {
   const handleChange = (e) => {

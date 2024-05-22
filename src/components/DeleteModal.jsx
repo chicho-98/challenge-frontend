@@ -14,7 +14,7 @@ function DeleteModal({ closeDeleteModal, movieToEditId, removeMovie }) {
         <h3>¿Está seguro que desea eliminar la película?</h3>
         <div className="btn-container">
           <button
-            className="confirm-btn"
+            className="delete-btn"
             onClick={() => handleDeleteMovie(movieToEditId, removeMovie)}
           >
             delete

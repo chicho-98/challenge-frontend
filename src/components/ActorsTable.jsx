@@ -25,8 +25,8 @@ function ActorsTable({ actors, handleRemoveActor }) {
                 <td className="actions">
                   <span>
                     <button
+                      className="remove-btn"
                       onClick={() => handleRemoveActor(actor.id)}
-                      className="confirm-btn"
                     >
                       remove
                     </button>

@@ -32,7 +32,7 @@ function AddActorModal({ closeModal, handleSubmit }) {
     <div className="modal-container">
       <div className="modal">
         <div className="cancel-btn-container">
-          <button className="cancel-btn" onClick={closeModal}>
+          <button className="cancel" onClick={closeModal}>
             x
           </button>
         </div>
