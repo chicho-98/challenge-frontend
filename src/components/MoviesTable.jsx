@@ -9,8 +9,8 @@ function MoviesTable({
   handleMovieToAddActorsId,
 }) {
   return (
-    <div className="container">
-      <table>
+    <div className="table-container">
+      <table className="table">
         <thead>
           <tr>
             <th>Id</th>

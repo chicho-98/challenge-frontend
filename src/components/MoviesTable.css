@@ -1,18 +1,41 @@
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-.actions {
-    display: flex;
-    justify-content: space-around;
-}
-
 .actions svg {
     cursor: pointer;
+    padding: 0 5px 0 5px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
+.table-container {
+    width: 100%;
+}
+
+.table {
+    overflow: hidden;
+    table-layout: auto;
+    border-collapse: collapse;
+    white-space: nowrap;
+    width: 100em;
+    max-width: 80%;
+    margin: auto;
+    overflow-x: auto;
+    background-color: white;
+    color: black;
+}
+
+.table thead {
+    background-color: #ccc;
+    color: #222;
+}
+
+.table th, .table td {
+    padding: 0.8rem;
+}
+
+.table td {
+    border-top: 0.5px solid #ddd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.table tbody tr:hover {
+    background-color: #eee;
 }

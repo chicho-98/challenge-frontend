@@ -4,14 +4,15 @@ import "./DeleteModal.css";
 
 function ActorsTable({ actors, handleRemoveActor }) {
   return (
-    <div className="container">
-      <table>
+    <div className="table-container">
+      <table className="table">
         <thead>
           <tr>
             <th>Id</th>
             <th>firstName</th>
             <th>lastName</th>
             <th>birthdate</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>

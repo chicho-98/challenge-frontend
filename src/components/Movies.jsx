@@ -86,16 +86,18 @@ function Movies() {
   return (
     <>
       <Header />
-      <h2>Movies</h2>
-      <div className="button-container">
-        <AddButton text="+ Movie" openModal={openModal} />
+      <div className="wrapper">
+        <div className="button-container">
+          <h2>Movies</h2>
+          <AddButton text="+ Movie" openModal={openModal} />
+        </div>
+        <MoviesTable
+          movies={movies}
+          handleMovieToDeleteId={handleMovieToDeleteId}
+          handleMovieToEditId={handleMovieToEditId}
+          handleMovieToAddActorsId={handleMovieToAddActorsId}
+        />
       </div>
-      <MoviesTable
-        movies={movies}
-        handleMovieToDeleteId={handleMovieToDeleteId}
-        handleMovieToEditId={handleMovieToEditId}
-        handleMovieToAddActorsId={handleMovieToAddActorsId}
-      />
       {modalOpen && (
         <Modal
           closeModal={closeModal}

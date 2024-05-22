@@ -1,4 +1,8 @@
+.wrapper {
+    margin: 20px;
+}
+
 .button-container {
     display: flex;
-    justify-content: end;
+    justify-content: space-around;
 }

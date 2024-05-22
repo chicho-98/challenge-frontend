@@ -46,9 +46,11 @@ function Actors() {
   return (
     <>
       <Header />
-      <h2>Actors</h2>
-      <div className="button-container">
-        <AddButton text="+ Actor" openModal={openModal} />
+      <div className="wrapper">
+        <div className="button-container">
+          <h2>Actors</h2>
+          <AddButton text="+ Actor" openModal={openModal} />
+        </div>
       </div>
       <ActorsTable actors={actors} handleRemoveActor={handleRemoveActor} />
       {modalOpen && (
