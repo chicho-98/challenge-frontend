@@ -8,7 +8,12 @@ function SelectActors({ actors, handleActorToAddId }) {
 
   return (
     <div>
-      <select name="s_actors" id="s_actors" onChange={handleChange}>
+      <select
+        name="s_actors"
+        id="s_actors"
+        onChange={handleChange}
+        className="select"
+      >
         <option value={0}>actors</option>
         {actors.map(function (actor) {
           return (

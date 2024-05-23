@@ -45,7 +45,7 @@
     color: white;
 }
 
-select, .form-group input {
+.select, .form-group input {
     width: 100%;
     background: #24303c;
     padding: 10px;
@@ -55,6 +55,10 @@ select, .form-group input {
     font-size: "calibri";
     font-size: 18px;
     color: white;
+}
+
+.form-group .select {
+    box-sizing:content-box;
 }
 
 .submit-btn-container {
