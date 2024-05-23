@@ -1,9 +1,10 @@
 import "./Modal.css";
 import { useState } from "react";
+import genres from "../data/genres";
 
 function Modal({ closeModal, handleSubmit, defaultValues }) {
   const [formState, setFormState] = useState(
-    defaultValues || { title: "", runtimeMinutes: 0 }
+    defaultValues || { title: "", runtimeMinutes: 0, genre: "" }
   );
 
   const handleChange = (e) => {
@@ -14,7 +15,7 @@ function Modal({ closeModal, handleSubmit, defaultValues }) {
   };
 
   const formIsValid = () => {
-    if (formState.title && formState.runtimeMinutes) {
+    if (formState.title && formState.runtimeMinutes && formState.genre) {
       return true;
     }
     return false;
@@ -22,7 +23,11 @@ function Modal({ closeModal, handleSubmit, defaultValues }) {
 
   const handleSubmitButton = (e) => {
     //e.preventDefault();
-    if (!formIsValid()) return;
+    if (!formIsValid()) {
+      console.log("something is wrong");
+      console.log(formState);
+      return;
+    }
     handleSubmit(formState);
   };
 
@@ -53,6 +58,16 @@ function Modal({ closeModal, handleSubmit, defaultValues }) {
               min="1"
               required
             />
+            <select name="genre" id="genre" onChange={handleChange} value={formState.genre} required>
+              <option value="">Genres</option>
+              {genres.map(function (genre) {
+                return (
+                  <option key={genre.id} value={genre.name}>
+                    {genre.name}
+                  </option>
+                );
+              })}
+            </select>
           </div>
           <div>
             <button className="submit-btn" onClick={handleSubmitButton}>

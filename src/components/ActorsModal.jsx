@@ -13,10 +13,10 @@ import {
 
 function ActorsModal({ closeActorsModal, movieToEditId, movie }) {
   const [movieActors, setMovieActors] = useState([
-    { id: 0, firstName: "Pepe", lastName: "Ramos", birthdate: "1970-12-01" },
+    { id: 0, firstName: "John", lastName: "Doe", birthdate: "12-31-1970" },
   ]);
   const [actors, setActors] = useState([
-    { id: 0, firstName: "Pepe", lastName: "Ramos", birthdate: "1970-12-01" },
+    { id: 0, firstName: "John", lastName: "Doe", birthdate: "12-31-1970" },
   ]);
   const [actorToAddId, setActorToAddId] = useState(null);
 

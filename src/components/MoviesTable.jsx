@@ -16,6 +16,7 @@ function MoviesTable({
             <th>Id</th>
             <th>Title</th>
             <th>Runtime (minutes)</th>
+            <th>Genre</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -26,6 +27,7 @@ function MoviesTable({
                 <td>{movie.id}</td>
                 <td>{movie.title}</td>
                 <td>{movie.runtimeMinutes}</td>
+                <td>{movie.genre}</td>
                 <td className="actions">
                   <span>
                     <BsFillTrashFill
